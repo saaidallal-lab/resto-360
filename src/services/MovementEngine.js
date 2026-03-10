@@ -7,8 +7,8 @@ import { EntrepriseEnricher } from './EntrepriseEnricher.js';
  */
 async function geocodeSingle(address) {
     try {
-        const url = `/api/geocode/search/?q=${encodeURIComponent(address)}&citycode=75056&limit=1`;
-        const res = await fetch(url, { signal: AbortSignal.timeout(5000) });
+        const url = `/api/geocode?q=${encodeURIComponent(address)}&citycode=75056&limit=1`;
+        const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
         if (!res.ok) return null;
         const data = await res.json();
         if (data.features && data.features.length > 0) {

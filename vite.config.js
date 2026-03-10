@@ -14,7 +14,7 @@ export default defineConfig({
       '/api/geocode': {
         target: 'https://api-adresse.data.gouv.fr',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/geocode/, '')
+        rewrite: (path) => path.replace(/^\/api\/geocode/, '/search/')
       }
     }
   }

@@ -1,10 +1,6 @@
 {
     "rewrites": [
         {
-            "source": "/api/geocode/:path*",
-            "destination": "https://api-adresse.data.gouv.fr/:path*"
-        },
-        {
             "source": "/(.*)",
             "destination": "/index.html"
         }
