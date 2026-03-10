@@ -7,7 +7,7 @@ export const estimateLocalCA = async (lat, lon) => {
     try {
         // Query SIRENE API for restaurants (56.10A) near the coordinates (40m radius = 0.04 km)
         // Note: The API parameter is radius in km.
-        const url = `https://recherche-entreprises.api.gouv.fr/search?q=56.10A&limite=5&lat=${lat}&lon=${lon}&radius=0.04`;
+        const url = `https://recherche-entreprises.api.gouv.fr/near_point?lat=${lat}&long=${lon}&radius=1&activite_principale=56.10A&per_page=5`;
         const response = await fetch(url);
 
         if (!response.ok) throw new Error("SIRENE API Failed");
